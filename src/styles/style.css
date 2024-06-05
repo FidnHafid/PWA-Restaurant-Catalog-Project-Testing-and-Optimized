@@ -1,0 +1,410 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+   
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+   
+   
+  /*
+    AppBar
+  */
+
+  .movies {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 32px 0;
+  }
+   
+   
+  /*
+    restaurant Item
+  */
+
+  .app-bar {
+    padding: 8px 16px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+   
+  .app-bar .app-bar__menu {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__menu button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
+  }
+   
+  .app-bar .app-bar__brand {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__brand h1 {
+    color: #c69735;
+    text-transform: uppercase;
+    font-size: 30px;
+    user-select: none;
+  }
+   
+  .app-bar .app-bar__navigation {
+    position: absolute;
+    top: 50px;
+    left: -180px;
+    width: 150px;
+    transition: all 0.3s;
+    padding: 8px;
+    background-color: transparent;
+    overflow: hidden;
+  }
+   
+  .app-bar .app-bar__navigation.open {
+    left: 0;
+  }
+   
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color:  black;
+    padding: 10px;
+    margin-bottom: 2px;
+    width: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li::after {
+    content: ''; 
+    position: absolute; 
+    left: 0;
+    bottom: -2px; 
+    width: 0; 
+    height: 2px; 
+    background-color: #c69735; 
+    transition: width 0.3s ease, left 0.3s ease; 
+  }
+  
+  .app-bar .app-bar__navigation ul li:hover::after {
+    width: 100%;
+  }
+  
+  .app-bar .app-bar__navigation ul li {
+    position: relative; 
+  }
+  
+  .app-bar .app-bar__navigation ul li:hover::after {
+    left: 0; 
+  }
+  
+   
+  /*
+    Main Content
+  */
+   
+  main {
+    padding: 32px;
+    flex: 1;
+  }
+   
+  .content {
+    margin: 0 auto;
+    min-height: 100%;
+  }
+   
+  .content .content__heading {
+    font-weight: normal;
+  }
+
+  .like {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #db0000;
+    
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 50%;
+    border: 0;
+    
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+   
+  /*
+    Restaurants
+  */
+   
+  .restaurant-container {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+  }
+  
+  .restaurant-item {
+    display: flex; 
+    flex-direction: column; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .restaurant-item img {
+    width: 100%; 
+    max-height: 150px; 
+    object-fit: cover;
+    border-bottom: 1px solid #ccc; 
+  }
+  
+  .restaurant-item-content {
+    padding: 10px; 
+  }
+  
+  .restaurant-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+  
+  .restaurant-item p {
+    margin: 5px 0;
+    font-size: 10px;
+  }
+  .restaurant-item h3 a {
+    color: black; 
+    text-decoration: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }
+  
+  .restaurant-item h3 a:hover {
+    color:  #c69735; ; 
+  }
+  
+  .restaurant-item h3 {
+    background: none;
+    color: white;
+    padding: 10px 0;
+    height: 45px;
+  }  
+
+  .content__heading {
+    text-align: center; 
+    margin: 30px 0 ; 
+    color: #c69735; 
+    font-size: 36px;         
+    font-weight: bold;
+    margin-bottom: 70px;
+  }
+  
+
+  .restaurans {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px 16px;
+  }
+
+  .restaurant__info h3 {
+    font-size: 24px;
+  }
+
+  .restaurant__info {
+    text-align: center;
+  }
+
+
+
+  .restaurant__detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .restaurant__poster {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  
+  .restaurant__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+  .restaurant__info h2 {
+    margin-bottom: 10px;
+  }
+  
+
+  .restaurant__title h2 {
+    width: 45px;
+    height: 45px;
+    line-height: 50px;
+    white-space: nowrap;
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+  }
+  
+  
+
+  .restaurant__poster img {
+    max-width: 100%;
+  }
+  
+  .restaurant__info h2,
+  .restaurant__info h3,
+  .restaurant__info h4,
+  .restaurant__info p,
+  .restaurant__info ul {
+    margin: 5px;
+    padding: 0;
+  }
+  
+  .restaurant__info ul {
+    list-style-type: none;
+  }
+  
+  .restaurant__info .restaurant__menu {
+    margin-top: 20px;
+  }
+  
+  .restaurant__info .restaurant__menu > div {
+    margin-bottom: 20px;
+  }
+  
+  
+  .app-bar__menu button {
+    width: 45px;
+    height: 45px;
+    font-size: 20px; /* Sesuaikan ukuran ikon hamburger jika perlu */
+  }
+  
+  
+
+   
+   
+  /*
+    Footer
+  */
+   
+  footer {
+    padding: 16px;
+  }
+   
+  footer p {
+    text-align: center;
+    color: #aaaaaa;
+  }
+   
+  footer p a {
+    color: #db0000;
+    text-decoration: none;
+  }
+
+  .skip-to-content {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: -40px; /* Mengatur posisi ke atas navbar */
+    z-index: 200;
+  }
+  
+  
+  .skip-to-content:focus {
+    position: static;
+  }
+  .navbar:focus .skip-to-content {
+    display: inline-block;
+  }
+  
+
+
+  .hero-container {
+    position: relative;
+    overflow: hidden;
+    width: 106%; 
+    height: auto;
+    max-height: calc(100vh - 100px); 
+    object-fit: cover;
+    margin-top: -100px; 
+    margin-left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.hero-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin: 0 auto; /* Mengatur margin ke auto untuk pemusatan */
+  width: 100%; /* Menyesuaikan lebar slider dengan lebar viewport */
+}
+
+.hero-slider img {
+  width: 170%; 
+  height: auto; 
+  object-fit: cover; /* Memastikan gambar terisi proporsional */
+
+  padding: 0 0px;
+}
+
+#query {
+  width: 30%; /* Biarkan lebarnya mengisi lebar kontainer */
+  height: 49px; /* Atur tinggi input */
+  font-size: 20px; /* Atur ukuran font */
+}
+
+  
+
+  
+  #movies {
+    position: absolute;
+    bottom: 20px; /* Sesuaikan jarak dari bawah */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center; /* Tambahkan untuk memusatkan */
+    width: 100%; /* Lebarkan area agar sesuai dengan gambar */
+}
+
+#movies h1 {
+    font-family: 'Heebo', sans-serif;
+    font-size: 25px;
+    color: #c69735;
+    margin-top: 20px; /* Sesuaikan nilai margin-top */
+    padding: 0dvb; /* Tambahkan padding agar lebih jauh dari gambar slider */
+}
+
+
+  
